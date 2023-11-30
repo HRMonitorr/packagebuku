@@ -132,24 +132,6 @@ type Repositories struct {
 	Homepage *string `json:"homepage"`
 }
 
-- git remote -v
-origin  git@github.com:HRMonitorr/packagebuku.git (fetch)
-origin  git@github.com:HRMonitorr/packagebuku.git (push)
-
-- git status
-
-- git add .
-
-- git commit -m "release v0.0.1"
-
-$ git tag v0.0.1
-$ git push --tags
-Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
-To github.com:HRMonitorr/packagebuku.git
-* [new tag]         v0.0.1 -> v0.0.1
-
-
-
 type PushRepositories struct {
 	Context       context.Context `json:"context"`
 	PersonalToken string          `json:"personalToken"`
