@@ -143,3 +143,13 @@ type PushRepositories struct {
 	Message       string          `json:"message"`
 	Branch        string          `json:"branch"`
 }
+
+type Req struct {
+	OwnerName string `json:"owner-name"`
+}
+
+type ResponseBack struct {
+	Status  int            `json:"status"`
+	Message string         `json:"message"`
+	Data    []Repositories `json:"data"`
+}

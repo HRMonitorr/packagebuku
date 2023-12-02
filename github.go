@@ -2,6 +2,7 @@ package packagebuku
 
 import (
 	"bufio"
+	"context"
 	"fmt"
 	"github.com/google/go-github/v56/github"
 	"io"
@@ -43,6 +44,40 @@ func UploadFileToRepository(val PushRepositories) (response *github.RepositoryCo
 	if err != nil {
 		fmt.Printf("%+v", err.Error())
 		return
+	}
+	return
+}
+
+func ListRepositoriesOrg(ctx context.Context, personalToken, OrgName string) (dest []*github.Repository, err error) {
+	dest, _, err = MakeClient(personalToken).Repositories.ListByOrg(ctx, OrgName, nil)
+	if err != nil {
+		return nil, err
+	}
+	return
+}
+
+func ListCommitALL(ctx context.Context, PersonalToken, repoName, ownerName string) ([]*github.RepositoryCommit, error) {
+	commits, _, err := MakeClient(PersonalToken).Repositories.ListCommits(ctx, ownerName, repoName, nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return commits, nil
+}
+
+func ListRepositoriesOnlydDetail(ctx context.Context, personalToken, OrgName string) (dest []Repositories, err error) {
+	List, err := ListRepositoriesOrg(ctx, personalToken, OrgName)
+	if err != nil {
+		return nil, err
+	}
+	dest = make([]Repositories, 0, len(List))
+	for _, v := range List {
+		data := Repositories{
+			Name:     v.Name,
+			FullName: v.FullName,
+			Homepage: v.Homepage,
+		}
+		dest = append(dest, data)
 	}
 	return
 }
