@@ -4,7 +4,7 @@ Sinopsis Naskah :
 
 Buku ini berisikan sebuah panduan bagi pembaca yang ingin menambah wawasan dalam bidang programming, terdapat salah satu cara menggunakan Github API untuk mengunggah file ke repository melalui Golang
 
-![image](https://github.com/HRMonitorr/packagebuku/assets/127081929/2531b0bd-2c84-4d2c-a3c8-915a46d0a82e)
+![COVER DEPAN BARU](https://github.com/harisriyoni/packagebuku/assets/127081929/b1041e3a-8751-4e85-a1aa-e12cd737bdf7)
 
 ![image](https://github.com/HRMonitorr/packagebuku/assets/127081929/a5639c08-bb10-414b-ac0c-40e22828267a)
 
